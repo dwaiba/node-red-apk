@@ -1,14 +1,14 @@
 FROM alpine:latest
 MAINTAINER cloudgear10 <poke@cloudgear.io>
-ENV LATEST=v4.x VERSION=v4.2.2 NPM_VERSION=2
+ENV LATEST=v4.x VERSION=v6.2.2 NPM_VERSION=3.9.5
 #ENV LATEST=v5.x VERSION=v5.0.0 NPM_VERSION=3.4.1
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
-# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
+#ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --update curl make gcc g++ python linux-headers paxctl libgcc libstdc++ git wget && \
-  curl -sSL https://nodejs.org/dist/latest-${LATEST}/node-${VERSION}.tar.gz | tar -xz && \
+  curl -sSL https://nodejs.org/dist/latest/node-${VERSION}.tar.gz | tar -xz && \
   cd /node-${VERSION} && \
   ./configure --prefix=/usr ${CONFIG_FLAGS} && \
   make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
