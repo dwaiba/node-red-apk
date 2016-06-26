@@ -5,3 +5,4 @@ Smallest node-red docker
 * http://<hostname>:1880 
 * http://<hostname>:1880/freeboard
 * Express Routes can protected by auth0
+* Smallest container of Azure iot Hub sink via node-red on apk
