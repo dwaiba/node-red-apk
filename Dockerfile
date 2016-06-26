@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER cloudgear10 <poke@cloudgear.io>
+MAINTAINER dwaiba <dwaiba@microsoft.com>
 ENV LATEST=v4.x VERSION=v6.2.2 NPM_VERSION=3.9.5
 #ENV LATEST=v5.x VERSION=v5.0.0 NPM_VERSION=3.4.1
 
@@ -49,5 +49,5 @@ RUN cd /opt/node-red && npm install node-red-azure-iot-hub
 RUN cd /opt/node-red && npm install node-red-contrib-azure-documentdb 
 RUN cd /opt/node-red && npm install node-red-contrib-azure-table-storage
 RUN cd /opt/node-red && npm install node-red-contrib-azure-blob-storage
-RUN cd /opt/node-red && npm install npm install node-red-contrib-azure-iot-hub
+RUN cd /opt/node-red && npm install node-red-contrib-azure-iot-hub
 CMD ["node", "/opt/node-red/red.js"]
