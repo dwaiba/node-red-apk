@@ -2,7 +2,6 @@ FROM alpine:3.4
 MAINTAINER dwaiba <dwaiba@microsoft.com>
 ENV VERSION=v6.2.2 NPM_VERSION=3
 
-# For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
